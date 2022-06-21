@@ -1,0 +1,22 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: NON_NULL
+    time-zone: GMT+8
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    connection-timeout: 15000
+    #publisher-confirms: true
+    username: guest
+    password: guest
+    listener:
+      simple:
+        #acknowledge-mode: manual
+        retry:
+          enabled: true
+          max-attempts: 5
+server:
+  port: 8081
+remote-api:
+  host:http://test2.6renyou.com/014_test/parse_flight2.php
